@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText ed_ntd;
     private TextView tv_result_jp;
     private TextView tv_result_us;
-    private Button btn_calculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void findViews() {
         ed_ntd = findViewById(R.id.ed_ntd);
-        btn_calculate = findViewById(R.id.btn_calculate);
         tv_result_jp = findViewById(R.id.tv_result_jp);
         tv_result_us = findViewById(R.id.tv_result_us);
     }
@@ -38,24 +36,27 @@ public class MainActivity extends AppCompatActivity {
 
         if (ed_ntd.getText().toString().equals("")){
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter your NTD amount")
-                    .setPositiveButton("OK", null)
+                    .setTitle(R.string.problem)
+                    .setMessage(R.string.enter_ntd)
+                    .setPositiveButton(R.string.ok, null)
                     .show();
         }else {
 
         float ntd = Float.parseFloat(ed_ntd.getText().toString());
         float result = ntd / 30.9f;
+        float result2 = ntd / 0.28f;
             new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("USD is " + result)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.result)
+                    .setMessage(getString(R.string.usd_is) + result)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ed_ntd.setText("");
                         }
                     })
                     .show();
+            tv_result_us.setText(getString(R.string.result)+result);
+            tv_result_jp.setText(getString(R.string.result)+result2);
         }
 
     }

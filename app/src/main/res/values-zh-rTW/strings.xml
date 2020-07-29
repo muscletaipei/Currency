@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Currency</string>
+    <string name="problem">問題</string>
+    <string name="enter_ntd">請輪入台幣</string>
+    <string name="ok">確認</string>
+    <string name="result">結果</string>
+    <string name="usd_is">滙率1美元＝30.9台幣，美金可對換為</string>
+    <string name="ntd">台幣</string>
+    <string name="go">計算</string>
+    <string name="jp">日㘣</string>
+    <string name="us">美元</string>
+    <string name="none">無</string>
+    <string name="rate_exchange">滙率換算</string>
+</resources>
